@@ -109,4 +109,4 @@ License: [MIT](https://choosealicense.com/licenses/mit/)
 | [![Nazedev](https://github.com/nazedev.png?size=100)](https://github.com/nazedev) | [![WhiskeySockets](https://github.com/WhiskeySockets.png?size=100)](https://github.com/WhiskeySockets) | 
 | --- | --- |
 | [NazeDev](https://github.com/nazedev) | [WhiskeySockets](https://github.com/WhiskeySockets) |
-# Created By [IQBALRMDI](https://github.com/IQBALRMDIOFC)# FirstBot-General
+# Created By [IQBALRMDI](https://github.com/IQBALRMDIOFC)
