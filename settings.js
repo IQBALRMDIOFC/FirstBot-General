@@ -1,6 +1,15 @@
 const fs = require('fs');
 const chalk = require('chalk');
 
+/*
+[[[[[[[[[[[[[[[[[[[[[[[[•]]]]]]]]]]]]]]]]]]]]]]]]
+[             [ Base BY IQBALRMDI ]             ]
+[              Inspired by NazeDev              ]
+[       There are many codes from NazeDev       ]
+[               Thanks to NazeDev               ]
+[[[[[[[[[[[[[[[[[[[[[[[[•]]]]]]]]]]]]]]]]]]]]]]]]
+*/
+
 global.owner = ['6289514307144']
 global.author = 'IQBALRMDI'
 global.botname = 'FirstBot-General'
@@ -14,10 +23,10 @@ global.pairing_code = true
 global.number_bot = '6285322012075'
 
 global.my = {
-	yt: 'https://youtube.com/c/Nazedev',
-	gh: 'https://github.com/nazedev',
+	yt: null,
+	gh: 'https://github.com/IQBALRMDIOFC',
 	gc: 'https://chat.whatsapp.com/B5qJIwZHm4VEYZJQE6iMwy',
-	ch: '120363250409960161@newsletter',
+	ch: '120363393280930398@newsletter',
 }
 
 global.limit = {

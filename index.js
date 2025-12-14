@@ -10,6 +10,15 @@ const { exec, spawn, execSync } = require('child_process');
 const { parsePhoneNumber } = require('awesome-phonenumber');
 const { default: WAConnection, useMultiFileAuthState, Browsers, DisconnectReason, makeCacheableSignalKeyStore, fetchLatestBaileysVersion, proto, jidNormalizedUser, getAggregateVotesInPollMessage } = require('baileys');
 
+/*
+[[[[[[[[[[[[[[[[[[[[[[[[•]]]]]]]]]]]]]]]]]]]]]]]]
+[             [ Base BY IQBALRMDI ]             ]
+[              Inspired by NazeDev              ]
+[       There are many codes from NazeDev       ]
+[               Thanks to NazeDev               ]
+[[[[[[[[[[[[[[[[[[[[[[[[•]]]]]]]]]]]]]]]]]]]]]]]]
+*/
+
 const { dataBase } = require('./lib/database');
 const { assertInstalled } = require('./lib/function');
 const { GroupParticipantsUpdate, MessagesUpsert, Solving } = require('./lib/message');

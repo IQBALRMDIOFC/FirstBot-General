@@ -7,17 +7,17 @@
       "money": 0,
       "status": 0,
       "join": false,
-      "public": true,
+      "public": false,
       "anticall": true,
       "original": true,
       "readsw": true,
       "autobio": false,
       "autoread": true,
-      "antispam": false,
+      "antispam": true,
       "autotyping": true,
-      "grouponly": true,
+      "grouponly": false,
       "multiprefix": true,
-      "privateonly": true,
+      "privateonly": false,
       "author": "IQBALRMDI",
       "autobackup": false,
       "botname": "FirstBot-General",
@@ -29,7 +29,7 @@
           "lock": true
         }
       ],
-      "button": false
+      "button": true
     }
   },
   "cmd": {},
@@ -122,6 +122,26 @@
   },
   "groups": {
     "120363422680881047@g.us": {
+      "url": "",
+      "text": {},
+      "warn": {},
+      "tagsw": {},
+      "nsfw": false,
+      "mute": false,
+      "leave": false,
+      "setinfo": false,
+      "antilink": false,
+      "demote": false,
+      "antitoxic": false,
+      "promote": false,
+      "welcome": false,
+      "antivirtex": false,
+      "antitagsw": false,
+      "antidelete": false,
+      "antihidetag": false,
+      "waktusholat": false
+    },
+    "120363423462454375@g.us": {
       "url": "",
       "text": {},
       "warn": {},

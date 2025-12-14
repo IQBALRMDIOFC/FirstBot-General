@@ -1,6 +1,15 @@
 process.on("uncaughtException", console.error)
 process.on("unhandledRejection", console.error)
 
+/*
+[[[[[[[[[[[[[[[[[[[[[[[[•]]]]]]]]]]]]]]]]]]]]]]]]
+[             [ Base BY IQBALRMDI ]             ]
+[              Inspired by NazeDev              ]
+[       There are many codes from NazeDev       ]
+[               Thanks to NazeDev               ]
+[[[[[[[[[[[[[[[[[[[[[[[[•]]]]]]]]]]]]]]]]]]]]]]]]
+*/
+
 require("./settings");
 const fs = require("fs");
 const os = require("os");
@@ -19,6 +28,7 @@ const PhoneNum = require("awesome-phonenumber");
 const { exec, spawn, execSync } = require("child_process");
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, getBinaryNodeChildren, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require("baileys");
 
+const { antiSpam } = require('./lib/antispam');
 const { GroupUpdate, LoadDataBase } = require("./lib/message");
 const { imageToWebp, videoToWebp, gifToWebp, writeExif } = require("./lib/exif");
 const { cmdAdd, cmdDel, cmdAddHit, addExpired, getPosition, getExpired, getStatus, checkStatus, getAllExpired, checkExpired } = require("./lib/database");
@@ -103,11 +113,12 @@ module.exports = sock = async (sock, m, msg, store) => {
 				cmdAdd(db.hit);
 				cmdAddHit(db.hit, command);
 			}
-			/*if (set.antispam && antiSpam.isFiltered(m.sender)) {
+			if (set.antispam && antiSpam.isFiltered(m.sender)) {
 				console.log(chalk.bgRed('[ SPAM ] : '), chalk.black(chalk.bgHex('#1CFFF7')(`From -> ${m.sender}`), chalk.bgHex('#E015FF')(` In ${m.isGroup ? m.chat : 'Private Chat'}`)))
 				return m.reply('「 ❗ 」Beri Jeda 5 Detik Per Command Kak')
-			}*/
+			}
 		}
+		if (isCmd && !isCreator) antiSpam.addFilter(m.sender)
 
     let fileSha256;
 		if (m.isMedia && m.msg.fileSha256 && db.cmd && (m.msg.fileSha256.toString('base64') in db.cmd)) {
@@ -126,7 +137,7 @@ module.exports = sock = async (sock, m, msg, store) => {
         mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         caption: text,
         footer: "© By IQBALRMDI",
-        mentions: [m.sender],
+        mentions: [m.sender, '0@s.whatsapp.net', owner[0] + '@s.whatsapp.net'],
         contextInfo: {
           forwardingScore: 10,
           isForwarded: true,
@@ -168,7 +179,7 @@ module.exports = sock = async (sock, m, msg, store) => {
 
     switch(fileSha256 || command) {
       case "menu": {
-        await sendMessButton(`Selamat datang di base IQBALRMDI ini adalah menu\n- allmenu\n- botmenu\n- groupmenu\n- downloadmenu`, [{
+        await sendMessButton(`Selamat datang Kak @${m.sender.split("@")[0]} di base IQBALRMDI ini adalah menu\n- allmenu\n- botmenu\n- groupmenu\n- downloadmenu\n\nTerima kasih untuk @${"0@s.whatsapp.net".split("@")[0]}`, [{
     				buttonId: `${prefix}allmenu`,
     				buttonText: { displayText: 'All Menu' },
     				type: 1
@@ -290,14 +301,9 @@ module.exports = sock = async (sock, m, msg, store) => {
 					m.reply(`Settings Bot @${botNumber.split('@')[0]}\n${settingsBot}\n\nExample: ${prefix + command} mode`);
 					break
 					default:
-					if (args[0] || args[1]) m.reply(`*Please Sellect Settings :*\n- Mode : *${prefix + command} mode self/public*\n- Anti Call : *${prefix + command} anticall on/off*\n- Auto Bio : *${prefix + command} autobio on/off*\n- Auto Read : *${prefix + command} autoread on/off*\n- Auto Typing : *${prefix + command} autotyping on/off*\n- Read Sw : *${prefix + command} readsw on/off*\n- Multi Prefix : *${prefix + command} multiprefix on/off*\n - Button Message : *${prefix + command} button on/off*`)
+					if (args[0] || args[1]) m.reply(`*Please Sellect Settings :*\n- Mode : *${prefix + command} mode self/public*\n- Anti Call : *${prefix + command} anticall on/off*\n- Auto Bio : *${prefix + command} autobio on/off*\n- Auto Read : *${prefix + command} autoread on/off*\n- Auto Typing : *${prefix + command} autotyping on/off*\n- Read Sw : *${prefix + command} readsw on/off*\n- Multi Prefix : *${prefix + command} multiprefix on/off*\n- Button Message : *${prefix + command} button on/off*`)
 				}
 				if (!args[0] && !args[1]) return m.reply(`*Bot Telah Online Selama*\n*${runtime(process.uptime())}*`)
-			}
-			break
-			
-			case "send": {
-			  m.reply(`Sender: ${m.sender}\nDecoded: ${m.sender.split("@")[0]}\nHasil: ${senderNumber}`);
 			}
 			break
       
