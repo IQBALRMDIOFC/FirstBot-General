@@ -1,0 +1,41 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "Base Simple Whatsapp",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "base",
+    "bot_whatsapp"
+  ],
+  "author": "IQBALRMDI",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "awesome-phonenumber": "^7.6.0",
+    "axios": "^1.13.2",
+    "baileys": "^7.0.0-rc.9",
+    "chalk": "^4.1.2",
+    "child_process": "^1.0.2",
+    "crypto": "^1.0.1",
+    "file-type": "^21.1.1",
+    "fluent-ffmpeg": "^2.1.3",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "human-readable": "^0.2.1",
+    "jimp": "^1.6.0",
+    "moment-timezone": "^0.6.0",
+    "mongoose": "^9.0.1",
+    "ms": "^2.1.3",
+    "node-cache": "^5.1.2",
+    "node-fetch": "^3.3.2",
+    "node-webpmux": "^3.2.1",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "pino": "^10.1.0",
+    "readline": "^1.3.0",
+    "util": "^0.12.5"
+  }
+}
