@@ -62,9 +62,9 @@ npm install
 npm start
 ```
 
-## Kirim pesan
+## 📨 Kirim pesan
 
-### Kirim pesan button
+### 🆒 Kirim pesan button
 ```javascript
 sendMessButton("pilih menu", [{
 		buttonId: `${prefix}allmenu`,
